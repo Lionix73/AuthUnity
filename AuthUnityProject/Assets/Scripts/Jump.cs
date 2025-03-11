@@ -5,7 +5,6 @@ public class Jump : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float maxJumpTime = 0.5f;
-    [SerializeField] private float gravMultiplier = 1f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius = 0.1f;
 
@@ -50,7 +49,6 @@ public class Jump : MonoBehaviour
             jumpTimeCounter += Time.deltaTime;
         }
         else if (!isJumping){
-            //rb.linearVelocity = new Vector2(rb.linearVelocityX, Vector3.down.y * gravMultiplier);
         }
     }
 
