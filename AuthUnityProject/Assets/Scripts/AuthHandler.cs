@@ -87,13 +87,12 @@ public class AuthHandler : MonoBehaviour
                 errorBox.SetActive(true);
                 errorText.color = Color.black;
                 errorText.text = "Usuario registrado correctamente!";
-                StartCoroutine(LoginPost(postData));
             }
             else if (www.responseCode == 400)
             {
                 errorBox.SetActive(true);
                 errorText.color = Color.red;
-                errorText.text = "Error al registrar. Username ya existe";
+                errorText.text = "Error al registrar. Credenciales ya existentes \nO credenciales invalidas";
             }
             else 
             {
@@ -135,6 +134,9 @@ public class AuthHandler : MonoBehaviour
                 StartCoroutine(GetUsers());
 
                 gameManager.NewGame();
+
+                errorBox.SetActive(false);
+                errorText.text = "";
             }
             else if(www.responseCode == 400){
                 errorBox.SetActive(true);

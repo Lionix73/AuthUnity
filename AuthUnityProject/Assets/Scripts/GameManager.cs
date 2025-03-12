@@ -105,8 +105,10 @@ public class GameManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (var user in leaderboard)
+        int maxEntries = 5;
+        for (int i = 0; i < Mathf.Min(leaderboard.Length, maxEntries); i++)
         {
+            var user = leaderboard[i];
             GameObject entry = Instantiate(leaderboardEntryPrefab, leaderboardContainer);
             TextMeshProUGUI[] texts = entry.GetComponentsInChildren<TextMeshProUGUI>();
             texts[0].text = user.username;
