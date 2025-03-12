@@ -156,7 +156,7 @@ public class AuthHandler : MonoBehaviour
     }
 
     IEnumerator GetPerfil(){
-        string path = url + "/api/usuarios/" + username;
+        string path = "/api/usuarios/" + username;
         UnityWebRequest www = UnityWebRequest.Get(url + path);
         www.SetRequestHeader("x-token", token);
 

@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
+using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
     [Header("Game Speed")]
